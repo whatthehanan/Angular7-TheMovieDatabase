@@ -3,18 +3,17 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { MoviesComponent } from './components/movies/movies.component';
-import { ShowsComponent } from './components/shows/shows.component';
 
 import { MoviesService } from './services/movies.service';
 import { ShowsService} from './services/shows.service';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent,
-    ShowsComponent
+    routingComponents,
+    NgbModule
   ],
   imports: [
     BrowserModule,

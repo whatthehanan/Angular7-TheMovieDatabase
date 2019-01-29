@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {MoviesComponent } from './components/movies/movies.component';
 import {ShowsComponent} from './components/shows/shows.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import { componentFactoryName } from '@angular/compiler';
 
 const routes = [
-  { path : '', component : MoviesComponent },
-  { path : 'shows', component : ShowsComponent }
+  { path : '', redirectTo : '/movies' , pathMatch : 'full' },
+  { path : 'movies', component : MoviesComponent },
+  { path : 'shows', component : ShowsComponent },
+  { path : "**", component : PageNotFoundComponent}
 ]
 
 @NgModule({
@@ -16,3 +19,8 @@ const routes = [
 })
 
 export class AppRoutingModule { }
+export const routingComponents = [
+  MoviesComponent,
+  ShowsComponent,
+  PageNotFoundComponent
+];
